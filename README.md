@@ -7,9 +7,8 @@ ios设备在横竖屏时，会自动调整dpi，无论横屏还是竖屏，都�
 网上找了很久，终于发现一篇有效，链接为：https://github.com/mishe/blog/issues/152
 然后我自己稍微改了一下w1的方法：
 html在onload调用w1方法
-    document.write('<meta id="vp" name="viewport" content="width=device-width,initial-scale=0.5' +
-       ',user-scalable=yes">')
-
+ document.write动态设置wiewport
+width=device-width ,initial-scale=0.5,user-scalable=yes
 然后在webview加 scalesPageToFit={Platform.OS === 'ios'? true : false}
   <WebView
       ref={"webview"}
